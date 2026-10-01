@@ -2,20 +2,21 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { Plate } from '@/components/Plate'
 import { Arrow } from '@/components/Icons'
+import { Tools } from '@/components/Tools'
 
 export const metadata: Metadata = { title: 'Story', description: 'Kala is the Sanskrit word for art, craft and time. Why the label is named for it, and what the gold on each set really is.' }
 
 export default function Story() {
   return (
     <>
-      <section className="story-hero dark grain">
+      <section className="story-hero">
         <div className="wrap story-hero-grid">
           <div className="story-head">
             <h1 className="story-word rise">Kala</h1>
             <p className="lede rise" style={{ '--d': '160ms' } as React.CSSProperties}>From the Sanskrit: art, craft and time.</p>
           </div>
-          <figure className="story-bust rise" style={{ '--d': '240ms' } as React.CSSProperties}>
-            <img src="/images/bust.webp" alt="A classical marble bust in low light, toned sapphire" width={640} height={960} fetchPriority="high" />
+          <figure className="story-painting rise" style={{ '--d': '240ms' } as React.CSSProperties}>
+            <img src="/images/cleft.webp" alt="Ink painting in sapphire on ivory: a waterfall falling through a mountain cleft into a misted pool" width={800} height={1100} fetchPriority="high" />
           </figure>
         </div>
       </section>
@@ -32,6 +33,15 @@ export default function Story() {
         <div className="story-plates">
           <Plate motif={0} ratio="r32" view="table" alt="The tailor's table, mid-cut, with zari tape laid out" sizes="(min-width: 900px) 460px, 100vw" />
           <Plate motif={3} ratio="r11" view="closeup" tone="ink" alt="Close-up of the zari border tape" sizes="(min-width: 900px) 300px, 70vw" className="story-close" />
+        </div>
+      </section>
+      <section className="section sand tools-section">
+        <div className="wrap tools-grid">
+          <div className="stack" style={{ '--s': '20px' } as React.CSSProperties}>
+            <h2 className="sig">Art and craft, on one table</h2>
+            <p className="lede">Kala covers both: the brush and the needle. Kalaverio keeps them on the same table.</p>
+          </div>
+          <Tools />
         </div>
       </section>
     </>

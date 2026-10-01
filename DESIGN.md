@@ -23,14 +23,18 @@ Controls: primary button sapphire fill, 48px, 2px corners, full width on phone, 
 
 ## Imagery
 
-Scenes come from the parent house (Zafirenzo site, `public/assets/bg_architectural.png`, `bg_botanical.png`, `public/sculpture.png`), re-toned into Kalaverio's own palette with one colour lookup: ink shadows, sapphire mids, ivory highlights. This cyanotype treatment is what makes them Kalaverio's rather than Zafirenzo's.
+Every image is Kalaverio's own, painted by `scripts/paint.py` (numpy + Pillow, seeded, re-runnable). Nothing is borrowed: the Zafirenzo reference images are rights-unclear per the Commerce playbook, so none ship here.
 
-| File | Source | Use |
+The language is sapphire ink wash on ivory paper, in the shan-shui tradition: ranges that dissolve into mist, cun texture strokes on rock, wet edges where washes dry, granulation, paper tooth, pines in groves, a falling stream through a cleft. One ink on a natural ground, as the playbook asks.
+
+| File | Painting | Use |
 |---|---|---|
-| `public/images/sanctuary-wide.webp` / `-tall.webp` | bg_architectural.png | Home hero, desktop / phone |
-| `public/images/garden-band.webp` | bg_botanical.png | Home interlude |
-| `public/images/bust.webp` | sculpture.png, cropped inside its frame | Story hero |
+| `valley-wide.webp` / `valley-tall.webp` | The sanctuary valley: open paper on the left for type, peaks and a waterfall to the right, moon, three birds | Home hero, desktop / phone |
+| `nightfall.webp` | The same valley at night, sapphire ground, the stream and mist the only light | Home interlude |
+| `cleft.webp` | A tall fall through a mountain cleft into a misted pool | Story hero |
+| `stroke.webp` | One dry-brush stroke: pressed wet, dragged, lifted dry | Behind "Kala" on the home strip |
+| `lib/og/valley.jpg` | The valley at share-card size | Background of every share image |
 
-All under 200 KB. None shows a garment, so none can be mistaken for the product. The Zenith damask and the Zafirenzo costume figures are deliberately not used.
+Line drawings (`components/Tools.tsx`, the garment flats in `Plate.tsx`) are hairline, to scale and numbered: the tools of kala are two for art (round brush, flat brush, rigger) and two for craft (shears, needle and thread).
 
-Layering on dark scenes: photograph, a flat ink veil (52%), film grain (`.grain`), then type. One orchestrated entrance on load (`.rise`, staggered by `--d`), the hero photograph settling from 1.08 scale, and a slow scroll drift on scenes where `animation-timeline: view()` is supported. All of it is off under reduced motion.
+Motion: one staggered entrance on load (`.rise`, delay in `--d`), the hero painting settling, and a slow scroll drift where `animation-timeline: view()` is supported. All off under reduced motion.

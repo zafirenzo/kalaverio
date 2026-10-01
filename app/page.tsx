@@ -19,13 +19,12 @@ export default async function Home() {
 
   return (
     <>
-      {/* 2. Hero: the Sanctuary, toned sapphire, with The Honour mounted like a print */}
-      <section className="hero dark grain">
+      {/* 2. Hero: an ink painting of the sanctuary valley, with The Honour mounted like a print */}
+      <section className="hero">
         <picture className="scene" aria-hidden="true">
-          <source media="(min-width: 900px)" srcSet="/images/sanctuary-wide.webp" width={1600} height={1000} />
-          <img src="/images/sanctuary-tall.webp" alt="" width={800} height={960} fetchPriority="high" />
+          <source media="(min-width: 900px)" srcSet="/images/valley-wide.webp" width={2000} height={1180} />
+          <img src="/images/valley-tall.webp" alt="" width={900} height={1500} fetchPriority="high" />
         </picture>
-        <div className="veil" aria-hidden="true" />
         <div className="wrap hero-grid">
           <div className="hero-copy">
             <h1 className="hero-title">
@@ -56,7 +55,7 @@ export default async function Home() {
       <section className="strip sand">
         <div className="wrap strip-inner">
           <p className="strip-line serif">
-            Kala: <span>art, craft and time.</span>
+            <span className="kala">Kala<img src="/images/stroke.webp" alt="" width={900} height={330} aria-hidden="true" /></span>: <span>art, craft and time.</span>
           </p>
           <p className="strip-note">
             <span className="mute">From the Sanskrit kala, with an Italian ending.</span>
@@ -80,10 +79,9 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Interlude: the garden, and the one idea Volume I is about */}
-      <section className="interlude dark grain">
-        <img className="interlude-img" src="/images/garden-band.webp" alt="" width={1600} height={900} loading="lazy" decoding="async" aria-hidden="true" />
-        <div className="veil" aria-hidden="true" />
+      {/* Interlude: the valley at night, and the one idea Volume I is about */}
+      <section className="interlude dark">
+        <img className="interlude-img" src="/images/nightfall.webp" alt="" width={2000} height={1000} loading="lazy" decoding="async" aria-hidden="true" />
         <div className="wrap interlude-copy">
           <p className="interlude-quote serif">Volume I is about being safe enough to be yourself.</p>
           <Link href="/story" className="link-arrow">Read the story <Arrow /></Link>
