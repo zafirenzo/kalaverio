@@ -9,7 +9,7 @@ export async function Nav() {
   return (
     <header className="nav">
       <div className="wrap">
-        <Link href="/" className="wordmark" aria-label="Zarbafini, home">ZARBAFINI</Link>
+        <Link href="/" className="wordmark" aria-label="Kalaverio, home">KALAVERIO</Link>
         <NavLinks className="nav-links" />
         <Link href="/collection" style={{ textDecoration: 'none' }} aria-label="Sets left, see the collection">
           <Chip phase={phase} left={totalLeft} run={totalRun} />

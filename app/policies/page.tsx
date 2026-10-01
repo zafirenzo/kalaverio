@@ -19,7 +19,7 @@ export default function Policies() {
         <div className="pol-body prose">
           <section id="refunds">
             <h2>Refunds</h2>
-            <p>Zarbafini is a pre-order. No set is made until {LAUNCH.threshold} sets across the collection are paid for. Pre-order closes at the end of 24 October.</p>
+            <p>Kalaverio is a pre-order. No set is made until {LAUNCH.threshold} sets across the collection are paid for. Pre-order closes at the end of 24 October.</p>
             <p>If fewer than {LAUNCH.threshold} are paid for by then, every buyer is refunded in full, to the account they paid from, starting on {LAUNCH.decisionDate}. Banks take 5 to 7 working days to show it.</p>
             <p>If a set sells out while you are paying, you are refunded in full automatically.</p>
           </section>
@@ -42,7 +42,7 @@ export default function Policies() {
           </section>
           <section id="seller">
             <h2>Seller</h2>
-            <p>Zarbafini, by Zafirenzo. {SELLER.name}, {SELLER.address}. <a href={`mailto:${SELLER.email}`}>{SELLER.email}</a></p>
+            <p>Kalaverio, by Zafirenzo. {SELLER.name}, {SELLER.address}. <a href={`mailto:${SELLER.email}`}>{SELLER.email}</a></p>
           </section>
         </div>
       </div>

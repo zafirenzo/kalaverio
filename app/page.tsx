@@ -26,7 +26,7 @@ export default async function Home() {
             <Plate cut={honour.for === 'women' ? 'aline' : 'long'} className="only-desk" photo={honour.photos.worn} motif={honour.motif} ratio="r32" title="The Honour" alt="The Honour, worn" sizes="(min-width: 900px) 640px, 100vw" />
           </div>
           <div className="hero-copy">
-            <h1 className="hero-title">Woven<br />gold.</h1>
+            <h1 className="hero-title">Cut<br />slowly.</h1>
             <p className="hero-vol serif sig">Volume I: Sanctuary.</p>
             <p className="lede">Six sets. Sixty numbered places. Pre-order opens {LAUNCH.opensLabel}.</p>
             {phase === 'before' ? (
@@ -42,10 +42,10 @@ export default async function Home() {
       <section className="strip sand">
         <div className="wrap strip-inner">
           <p className="strip-line serif">
-            Zarbaft: <span>cloth woven with gold thread.</span>
+            Kala: <span>art, craft and time.</span>
           </p>
           <p className="strip-note">
-            <span className="mute">From the Persian zar, gold, and baft, woven.</span>
+            <span className="mute">From the Sanskrit kala, with an Italian ending.</span>
             <Link href="/story" className="link-arrow">Read the story <Arrow /></Link>
           </p>
         </div>

@@ -34,9 +34,9 @@ export default async function SetPage({ params }: P) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: `${set.name}, Zarbafini Volume I`,
+    name: `${set.name}, Kalaverio Volume I`,
     description: set.line,
-    brand: { '@type': 'Brand', name: 'Zarbafini' },
+    brand: { '@type': 'Brand', name: 'Kalaverio' },
     image: set.photos.worn?.src ? [set.photos.worn.src] : undefined,
     offers: {
       '@type': 'Offer',
@@ -93,7 +93,7 @@ export default async function SetPage({ params }: P) {
         <ul className="promises">
           <li>No set is made until {LAUNCH.threshold} are paid for. Otherwise everyone is refunded in full.</li>
           <li>Ships {DELIVERY}.</li>
-          <li>The gold is zari border tape: real metallic weave, not handwoven zarbaft.</li>
+          <li>The gold is zari border tape: real metallic weave, not hand-embroidered zardozi.</li>
         </ul>
 
         <div className="folds">

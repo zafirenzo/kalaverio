@@ -16,9 +16,9 @@ export const revalidate = 30
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: 'Zarbafini · Woven gold. Volume I: Sanctuary.', template: '%s · Zarbafini' },
-  description: 'Six sets. Sixty numbered places. Clothes with a zari gold border, cut slowly and released in small numbered runs. Pre-order opens 14 October.',
-  openGraph: { siteName: 'Zarbafini', type: 'website', locale: 'en_IN' },
+  title: { default: 'Kalaverio · Volume I: Sanctuary.', template: '%s · Kalaverio' },
+  description: 'Six sets. Sixty numbered places. Clothes cut slowly and released in small numbered runs. Pre-order opens 14 October.',
+  openGraph: { siteName: 'Kalaverio', type: 'website', locale: 'en_IN' },
 }
 
 export const viewport: Viewport = { themeColor: '#F5F0E8' }

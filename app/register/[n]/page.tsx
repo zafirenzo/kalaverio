@@ -36,7 +36,7 @@ export default async function RegisterRow({ params }: P) {
         <p className="lede" style={{ color: 'var(--on-dark-mute)' }}>
           {set?.name} Nº {pad2(r.set_number)} of {set?.runSize}{r.city ? ` · ${r.city}` : ''}
         </p>
-        <p className="label" style={{ color: 'var(--gold)', marginTop: 24 }}>Zarbafini, Volume I: Sanctuary</p>
+        <p className="label" style={{ color: 'var(--gold)', marginTop: 24 }}>Kalaverio, Volume I: Sanctuary</p>
         <Link href={`/register#${pad3(r.register_number)}`} className="link-arrow">See the full Register <Arrow /></Link>
       </div>
     </section>

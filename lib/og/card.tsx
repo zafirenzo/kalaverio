@@ -10,7 +10,7 @@ export async function ogCard({ big, title, sub }: { big?: string; title: string;
   return new ImageResponse(
     (
       <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: '#0B2A6F', color: '#F5F0E8', padding: 72, fontFamily: 'Serif' }}>
-        <div style={{ display: 'flex', fontSize: 22, letterSpacing: 9 }}>ZARBAFINI</div>
+        <div style={{ display: 'flex', fontSize: 22, letterSpacing: 9 }}>KALAVERIO</div>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           {big && <div style={{ fontSize: 168, lineHeight: 1, color: '#C9A227' }}>{big}</div>}
           <div style={{ fontSize: big ? 64 : 112, lineHeight: 1.05, marginTop: big ? 16 : 0 }}>{title}</div>

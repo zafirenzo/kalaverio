@@ -1,5 +1,5 @@
--- Zarbafini: orders, waitlist, and the public Register view.
--- Run in the Zarbafini Supabase project (not Zenith's).
+-- Kalaverio: orders, waitlist, and the public Register view.
+-- Run in the Kalaverio Supabase project (not Zenith's).
 
 create table orders (
   id uuid primary key default gen_random_uuid(),

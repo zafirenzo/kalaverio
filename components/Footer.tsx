@@ -34,7 +34,7 @@ export function Footer({ phase }: { phase: Phase }) {
           </address>
         </div>
         <div className="footer-base mute">
-          <span>Zarbafini, by Zafirenzo</span>
+          <span>Kalaverio, by Zafirenzo</span>
           <span>Prices include GST. <Link href="/policies">Refunds, exchanges and delivery</Link></span>
         </div>
       </div>

@@ -1,4 +1,4 @@
-# Zarbafini
+# Kalaverio
 
 Next.js 16 (App Router) · Supabase · Razorpay Standard Checkout · Resend · Vercel Analytics. Sanity optional.
 

@@ -59,7 +59,7 @@ export function CheckoutForm({ slug, size, price, setName }: { slug: string; siz
         key: res.keyId,
         amount: res.amount,
         currency: 'INR',
-        name: 'Zarbafini',
+        name: 'Kalaverio',
         description: `${setName}, pre-order`,
         order_id: res.gatewayOrderId,
         prefill: res.prefill,

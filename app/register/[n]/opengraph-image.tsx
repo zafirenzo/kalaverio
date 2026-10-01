@@ -5,7 +5,7 @@ import { pad2 } from '@/lib/state'
 
 export const size = ogSize
 export const contentType = 'image/png'
-export const alt = 'A place in the Zarbafini Register'
+export const alt = 'A place in the Kalaverio Register'
 
 export default async function Image({ params }: { params: Promise<{ n: string }> }) {
   const { n } = await params

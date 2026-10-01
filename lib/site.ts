@@ -21,9 +21,9 @@ export type Size = (typeof SIZES)[number]
 export const SELLER = {
   name: 'Zafirenzo', // PLACEHOLDER: registered legal name of the seller
   address: 'Address to be confirmed, India', // PLACEHOLDER
-  email: 'hello@zarbafini.com', // PLACEHOLDER
+  email: 'hello@kalaverio.com', // PLACEHOLDER
   gst: '', // PLACEHOLDER: GSTIN if registered; leave empty to hide
-  instagram: 'https://instagram.com/zarbafini', // PLACEHOLDER
+  instagram: 'https://instagram.com/kalaverio', // PLACEHOLDER
 }
 
 // PLACEHOLDER: replace with the tailor's measurements. Inches, body measurements.

@@ -13,7 +13,7 @@ export async function sendReceipt(r: Receipt) {
   const html = `
   <div style="background:#F5F0E8;padding:40px 24px;font-family:Georgia,serif;color:#0B0F1A">
     <div style="max-width:520px;margin:0 auto">
-      <p style="letter-spacing:.3em;font-size:12px;margin:0 0 32px">ZARBAFINI</p>
+      <p style="letter-spacing:.3em;font-size:12px;margin:0 0 32px">KALAVERIO</p>
       <h1 style="font-weight:400;font-size:32px;line-height:40px;margin:0 0 8px">You are Nº ${nº} in the Register.</h1>
       <div style="width:48px;height:1px;background:#C9A227;margin:16px 0 24px"></div>
       <p style="font-family:Arial,sans-serif;font-size:16px;line-height:26px">Thank you, ${esc(r.buyerName)}. Your payment for <b>${esc(r.setName)}</b>, size ${esc(r.size)}, is confirmed. Your set is ${esc(r.setName)} Nº ${pad2(r.setNumber)} of ${r.runSize}.</p>
@@ -24,16 +24,16 @@ export async function sendReceipt(r: Receipt) {
       </table>
       <p style="font-family:Arial,sans-serif;font-size:16px;line-height:26px">What happens next: no set is made until ${LAUNCH.threshold} are paid for. On ${LAUNCH.decisionDate} we write to everyone at once. If we reach ${LAUNCH.threshold}, your set is cut and ships ${DELIVERY}. If we don't, you are refunded in full.</p>
       <p style="font-family:Arial,sans-serif;font-size:16px;line-height:26px"><a style="color:#0B2A6F" href="${SITE_URL}/register/${nº}">See your place in the Register</a></p>
-      <p style="font-family:Arial,sans-serif;font-size:13px;line-height:20px;color:#5B6070;margin-top:40px">Zarbafini, by Zafirenzo · ${esc(SELLER.email)}</p>
+      <p style="font-family:Arial,sans-serif;font-size:13px;line-height:20px;color:#5B6070;margin-top:40px">Kalaverio, by Zafirenzo · ${esc(SELLER.email)}</p>
     </div>
   </div>`
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      from: process.env.EMAIL_FROM ?? 'Zarbafini <orders@zarbafini.com>',
+      from: process.env.EMAIL_FROM ?? 'Kalaverio <orders@kalaverio.com>',
       to: r.to,
-      subject: `Nº ${nº}: your Zarbafini pre-order is confirmed`,
+      subject: `Nº ${nº}: your Kalaverio pre-order is confirmed`,
       html,
     }),
   })
