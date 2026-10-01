@@ -8,11 +8,18 @@ export const metadata: Metadata = { title: 'Story', description: 'Kala is the Sa
 export default function Story() {
   return (
     <>
-      <section className="wrap page-head story-head">
-        <h1 className="story-word">Kala</h1>
-        <p className="lede mute">From the Sanskrit: art, craft and time.</p>
+      <section className="story-hero dark grain">
+        <div className="wrap story-hero-grid">
+          <div className="story-head">
+            <h1 className="story-word rise">Kala</h1>
+            <p className="lede rise" style={{ '--d': '160ms' } as React.CSSProperties}>From the Sanskrit: art, craft and time.</p>
+          </div>
+          <figure className="story-bust rise" style={{ '--d': '240ms' } as React.CSSProperties}>
+            <img src="/images/bust.webp" alt="A classical marble bust in low light, toned sapphire" width={640} height={960} fetchPriority="high" />
+          </figure>
+        </div>
       </section>
-      <section className="wrap story">
+      <section className="wrap story" style={{ paddingTop: 'var(--section)' }}>
         <div className="prose lede story-text">
           <p>Kala is the Sanskrit word for art, craft and time. Kalaverio is a house built on that idea: clothes for young people who make things, cut slowly and released in small numbered runs, under Zafirenzo, the era of sapphire. We begin with one collection and will grow, a piece at a time, into every kind of clothing.</p>
           <p>Volume I is called Sanctuary, and it is about being safe enough to be yourself. There are six sets and sixty places, and every owner may appear in a public Register.</p>

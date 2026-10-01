@@ -302,19 +302,62 @@ h3 { font-size: 24px; line-height: 30px; }
 .waitlist { display: grid; gap: 8px; max-width: 460px; }
 @media (min-width: 640px) { .waitlist { grid-template-columns: 1fr auto; } }
 
-/* ---------- Hero ---------- */
-.hero { padding-block: 16px 64px; }
-.hero-grid { display: grid; gap: 32px; }
-.hero-copy { display: grid; gap: 20px; align-content: center; }
-.hero-title { font-size: clamp(64px, 18vw, 96px); line-height: 0.92; letter-spacing: -0.025em; }
-.hero-vol { font-size: 26px; line-height: 32px; }
-.hero-copy .lede { max-width: 32ch; margin-top: 4px; }
-@media (min-width: 900px) {
-  .hero { padding-block: 56px 96px; }
-  .hero-grid { grid-template-columns: 1fr 1fr; gap: var(--gutter); align-items: center; }
-  .hero-copy { order: -1; padding-right: 48px; gap: 24px; }
-  .hero-vol { font-size: 30px; line-height: 36px; }
+/* ---------- Scenes (house imagery, toned sapphire) ---------- */
+.scene, .interlude-img { position: absolute; inset: 0; z-index: 0; }
+.scene img, .interlude-img { width: 100%; height: 100%; object-fit: cover; }
+/* A flat ink wash over the photograph: holds ivory type at AA without a gradient. */
+.veil { position: absolute; inset: 0; z-index: 1; background: rgb(5 7 13 / 0.52); pointer-events: none; }
+/* Film grain, the same quiet texture the house sites lay over their scenes. */
+.grain { position: relative; isolation: isolate; }
+.grain::after {
+  content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: 0.09; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
+.grain > .wrap { position: relative; z-index: 3; }
+
+/* ---------- Hero ---------- */
+.hero { overflow: hidden; padding-block: 72px 56px; min-height: calc(100svh - var(--nav-h)); display: grid; align-items: end; }
+.hero-grid { display: grid; gap: 48px; }
+.hero-copy { display: grid; gap: 20px; align-content: end; }
+.hero-title { display: grid; font-size: clamp(76px, 22vw, 152px); line-height: 0.86; letter-spacing: -0.035em; color: var(--ivory); }
+.hero-vol { font-size: 26px; line-height: 32px; color: var(--ivory); }
+.hero-copy .lede { max-width: 32ch; color: var(--on-dark-mute); }
+.hero .waitlist { max-width: 480px; }
+.hero-print { justify-self: end; width: min(66%, 340px); display: grid; gap: 12px; padding: 10px 10px 14px; background: var(--ivory); color: var(--ink); text-decoration: none; border-radius: 2px; box-shadow: 0 2px 6px rgb(0 0 0 / 0.25), 0 40px 80px -24px rgb(0 0 0 / 0.65); transition: transform 600ms var(--ease), box-shadow 600ms var(--ease); }
+.hero-print:hover { transform: translateY(-6px); box-shadow: 0 2px 6px rgb(0 0 0 / 0.25), 0 56px 96px -24px rgb(0 0 0 / 0.7); }
+.dark .hero-print { color: var(--ink); }
+.hero-print-cap { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding-inline: 2px; }
+.hero-print-cap .serif { font-size: 20px; line-height: 24px; }
+.hero-print .chip { background: var(--ink); color: var(--ivory); }
+.hero-print .chip b { color: var(--gold); }
+@media (min-width: 900px) {
+  .hero { padding-block: 96px 88px; }
+  .hero-grid { grid-template-columns: 7fr 5fr; gap: var(--gutter); align-items: end; }
+  .hero-print { width: 340px; margin-bottom: 8px; transform: rotate(1.2deg); }
+  .hero-print:hover { transform: rotate(0deg) translateY(-6px); }
+  .hero-vol { font-size: 32px; line-height: 38px; }
+}
+
+/* ---------- Interlude ---------- */
+.interlude { overflow: hidden; min-height: clamp(420px, 72vh, 720px); display: grid; align-items: center; }
+.interlude-img { height: 124%; top: -12%; }
+.interlude .veil { background: rgb(5 7 13 / 0.46); }
+.interlude-copy { display: grid; gap: 24px; justify-items: start; padding-block: 96px; }
+.interlude-quote { max-width: 18ch; font-size: clamp(40px, 7vw, 88px); line-height: 1.02; letter-spacing: -0.02em; color: var(--ivory); text-wrap: balance; }
+
+/* ---------- The one orchestrated entrance, and slow drift on scroll ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .scene img { animation: settle 2400ms var(--ease) both; }
+  .rise { animation: rise 1000ms var(--ease) both; animation-delay: calc(150ms + var(--d, 0ms)); }
+  @supports (animation-timeline: view()) {
+    .scene img { animation: settle 2400ms var(--ease) both, drift linear both; animation-timeline: auto, view(); animation-range: normal, exit; }
+    .interlude-img { animation: drift-band linear both; animation-timeline: view(); }
+  }
+}
+@keyframes settle { from { transform: scale(1.08); filter: brightness(0.6); } }
+@keyframes rise { from { opacity: 0; transform: translateY(28px); } }
+@keyframes drift { to { transform: translateY(14%) scale(1.04); } }
+@keyframes drift-band { from { transform: translateY(-7%); } to { transform: translateY(7%); } }
 
 /* ---------- Name strip ---------- */
 .strip { padding-block: 40px; }
@@ -463,8 +506,19 @@ body:has(.reserve-bar) .footer { padding-bottom: 112px; }
 .reg-card-n { font-size: clamp(88px, 22vw, 176px); line-height: 0.9; color: var(--gold); letter-spacing: -0.02em; }
 
 /* ---------- Story ---------- */
-.story-head { display: grid; gap: 12px; }
-.page-head .story-word { font-size: clamp(72px, 20vw, 168px); line-height: 0.9; letter-spacing: -0.03em; color: var(--sapphire); }
+.story-hero { overflow: hidden; background: #05070d; }
+.story-hero-grid { display: grid; gap: 32px; padding-top: 56px; }
+.story-head { display: grid; gap: 16px; align-content: end; padding-bottom: 8px; }
+.story-head .lede { color: var(--on-dark-mute); }
+.story-word { font-size: clamp(96px, 30vw, 240px); line-height: 0.85; letter-spacing: -0.04em; color: var(--ivory); }
+.story-bust { margin: 0 calc(-1 * var(--gutter)); }
+.story-bust img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; }
+@media (min-width: 900px) { .story-bust img { aspect-ratio: 2 / 3; } }
+@media (min-width: 900px) {
+  .story-hero-grid { grid-template-columns: 7fr 5fr; gap: var(--gutter); align-items: end; padding-top: 0; }
+  .story-head { padding-bottom: 96px; }
+  .story-bust { margin: 0; }
+}
 .story { display: grid; gap: 48px; padding-bottom: var(--section); }
 .story-text { font-size: 20px; line-height: 32px; }
 .story-truth { padding-top: 24px; border-top: 1px solid var(--rule-strong); }

@@ -7,6 +7,7 @@ import { Plate } from '@/components/Plate'
 import { SetCard } from '@/components/SetCard'
 import { RegisterGrid } from '@/components/RegisterGrid'
 import { WaitlistForm } from '@/components/WaitlistForm'
+import { Chip } from '@/components/Chip'
 import { Arrow } from '@/components/Icons'
 
 export default async function Home() {
@@ -18,23 +19,36 @@ export default async function Home() {
 
   return (
     <>
-      {/* 2. Hero */}
-      <section className="hero">
+      {/* 2. Hero: the Sanctuary, toned sapphire, with The Honour mounted like a print */}
+      <section className="hero dark grain">
+        <picture className="scene" aria-hidden="true">
+          <source media="(min-width: 900px)" srcSet="/images/sanctuary-wide.webp" width={1600} height={1000} />
+          <img src="/images/sanctuary-tall.webp" alt="" width={800} height={960} fetchPriority="high" />
+        </picture>
+        <div className="veil" aria-hidden="true" />
         <div className="wrap hero-grid">
-          <div className="hero-media">
-            <Plate cut={honour.for === 'women' ? 'aline' : 'long'} className="only-phone" photo={honour.photos.worn} motif={honour.motif} ratio="r45" title="The Honour" alt="The Honour, worn" sizes="100vw" priority />
-            <Plate cut={honour.for === 'women' ? 'aline' : 'long'} className="only-desk" photo={honour.photos.worn} motif={honour.motif} ratio="r32" title="The Honour" alt="The Honour, worn" sizes="(min-width: 900px) 640px, 100vw" />
-          </div>
           <div className="hero-copy">
-            <h1 className="hero-title">Cut<br />slowly.</h1>
-            <p className="hero-vol serif sig">Volume I: Sanctuary.</p>
-            <p className="lede">Six sets. Sixty numbered places. Pre-order opens {LAUNCH.opensLabel}.</p>
-            {phase === 'before' ? (
-              <WaitlistForm source="hero" id="waitlist" />
-            ) : (
-              <Link href={cta.href} className="btn">{cta.label} <Arrow /></Link>
-            )}
+            <h1 className="hero-title">
+              <span className="rise" style={{ '--d': '0ms' } as React.CSSProperties}>Cut</span>
+              <span className="rise" style={{ '--d': '140ms' } as React.CSSProperties}>slowly.</span>
+            </h1>
+            <p className="hero-vol serif sig rise" style={{ '--d': '320ms' } as React.CSSProperties}>Volume I: Sanctuary.</p>
+            <p className="lede rise" style={{ '--d': '420ms' } as React.CSSProperties}>Six sets. Sixty numbered places. Pre-order opens {LAUNCH.opensLabel}.</p>
+            <div className="rise" style={{ '--d': '520ms' } as React.CSSProperties}>
+              {phase === 'before' ? (
+                <WaitlistForm source="hero" id="waitlist" />
+              ) : (
+                <Link href={cta.href} className="btn">{cta.label} <Arrow /></Link>
+              )}
+            </div>
           </div>
+          <Link href={`/collection/${honour.slug}`} className="hero-print rise" style={{ '--d': '260ms' } as React.CSSProperties}>
+            <Plate cut={honour.for === 'women' ? 'aline' : 'long'} photo={honour.photos.worn} motif={honour.motif} alt="The Honour, worn" sizes="(min-width: 900px) 360px, 60vw" priority />
+            <span className="hero-print-cap">
+              <span className="serif">The Honour</span>
+              <Chip phase={phase} left={honour.left} run={honour.runSize} />
+            </span>
+          </Link>
         </div>
       </section>
 
@@ -66,8 +80,18 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Interlude: the garden, and the one idea Volume I is about */}
+      <section className="interlude dark grain">
+        <img className="interlude-img" src="/images/garden-band.webp" alt="" width={1600} height={900} loading="lazy" decoding="async" aria-hidden="true" />
+        <div className="veil" aria-hidden="true" />
+        <div className="wrap interlude-copy">
+          <p className="interlude-quote serif">Volume I is about being safe enough to be yourself.</p>
+          <Link href="/story" className="link-arrow">Read the story <Arrow /></Link>
+        </div>
+      </section>
+
       {/* 5. The Register */}
-      <section className="section rule-top">
+      <section className="section">
         <div className="wrap reg-teaser">
           <div className="stack" style={{ '--s': '20px' } as React.CSSProperties}>
             <h2 className="sig">Owners, in order.</h2>
