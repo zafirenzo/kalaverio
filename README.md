@@ -46,3 +46,4 @@ Search for `PLACEHOLDER` in `lib/site.ts` and `lib/sets.ts`: set names (all but 
 - [x] Waitlist rejects duplicates (unique, normalised) and rapid repeats (honeypot + throttle)
 - [ ] Every photograph has a description and is under 200 KB (photos not supplied yet)
 - [x] States switch from "Before 14 October" to "Open" by date
+# kalaverio
